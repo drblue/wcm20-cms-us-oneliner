@@ -53,7 +53,7 @@ class OnelinerWidget extends WP_Widget {
 		// do we have a title set? if so, use it, otherwise set empty title
 		$title = isset($instance['title'])
 			? $instance['title']
-			: get_option('ww_default_title', __('Current Weather', 'ww'));
+			: get_option('ww_default_title', __('Random Funny Oneliner', 'wcmol'));
 
 		?>
 			<!-- title -->
