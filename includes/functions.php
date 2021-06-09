@@ -28,3 +28,30 @@ function wcmol_enqueue_styles() {
 	]);
 }
 add_action('wp_enqueue_scripts', 'wcmol_enqueue_styles');
+
+/**
+ * Respond to incoming AJAX-request for action 'wcmol_get_oneliner'
+ *
+ * wp_ajax_{action}         // if user is logged in
+ * wp_ajax_nopriv_{action}  // if user is NOT logged in
+ *
+ * @return void
+ */
+function wcmol_ajax_get_oneliner() {
+	$oneliners = [
+		"Light travels faster than sound. This is why some people appear bright until they open their mouths.", // 0
+		"I always take life with a grain of salt. Plus, a slice of lemon. And a shot of tequila.", // 1
+		"That's odd.", // 2
+	];
+
+	$i = array_rand($oneliners); // get random index from array
+	$oneliner = $oneliners[$i];  // get item at index from array
+
+	sleep(3);
+
+	wp_send_json([
+		'oneliner' => $oneliner,
+	]);
+}
+add_action('wp_ajax_wcmol_get_oneliner', 'wcmol_ajax_get_oneliner');
+add_action('wp_ajax_nopriv_wcmol_get_oneliner', 'wcmol_ajax_get_oneliner');
