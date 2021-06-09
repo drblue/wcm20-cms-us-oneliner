@@ -18,6 +18,10 @@ if (!function_exists('pre')) {
  * @return void
  */
 function wcmol_enqueue_styles() {
+	// styles
 	wp_enqueue_style('wcm20-oneliner-styles', WCMOL_PLUGIN_URL . "assets/css/wcm20-oneliner.css", [], "0.1", "screen");
+
+	// scripts
+	wp_enqueue_script('wcm20-oneliner-js', WCMOL_PLUGIN_URL . "assets/js/wcm20-oneliner.js", [], "0.1", true);
 }
 add_action('wp_enqueue_scripts', 'wcmol_enqueue_styles');

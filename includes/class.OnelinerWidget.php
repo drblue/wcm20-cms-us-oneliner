@@ -34,7 +34,9 @@ class OnelinerWidget extends WP_Widget {
 
 		// render output
 		?>
-			Here be funny content.
+			<div class="oneliner">
+				<p>Here be funny content.</p>
+			</div>
 		<?php
 
 		// end widget

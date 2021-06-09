@@ -2,3 +2,7 @@
  * Styles for WCM20 Oneliner Plugin
  */
 
+.widget_wcm20-oneliner-widget .oneliner {
+	font-style: italic;
+	text-align: center;
+}
