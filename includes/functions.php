@@ -23,5 +23,8 @@ function wcmol_enqueue_styles() {
 
 	// scripts
 	wp_enqueue_script('wcm20-oneliner-js', WCMOL_PLUGIN_URL . "assets/js/wcm20-oneliner.js", [], "0.1", true);
+	wp_localize_script('wcm20-oneliner-js', 'wcmol_settings', [
+		'ajax_url' => admin_url('admin-ajax.php'),
+	]);
 }
 add_action('wp_enqueue_scripts', 'wcmol_enqueue_styles');
