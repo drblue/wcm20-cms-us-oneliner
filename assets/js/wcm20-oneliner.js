@@ -10,7 +10,7 @@
 				console.log("Yay, got a response:", res);
 
 				// get oneliner-element and replace content with oneliner in response
-					onelinerEl.innerHTML = "<p>" + res.oneliner + "</p>";
+				onelinerEl.innerHTML = "<p>" + res.oneliner + "</p>";
 			})
 	} else {
 		console.log("No boom, no oneliner-element found 😢");
