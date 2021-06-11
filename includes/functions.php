@@ -47,7 +47,7 @@ function wcmol_ajax_get_oneliner() {
 	$i = array_rand($oneliners); // get random index from array
 	$oneliner = $oneliners[$i];  // get item at index from array
 
-	sleep(3);
+	// sleep(3);
 
 	wp_send_json([
 		'oneliner' => $oneliner,
