@@ -1,18 +1,18 @@
 (function() {
-	const onelinerEl = document.querySelector('#oneliner');
-	if (onelinerEl) {
-		console.log("Found oneliner-element, firing away request 🚀");
+
+	// get all oneliner elements and fetch a oneliner for each of them
+	document.querySelectorAll('.oneliner').forEach(onelinerEl => {
+		console.log("Found a oneliner-element, firing away request for this element 🚀", onelinerEl);
 
 		// fire away request
 		fetch(wcmol_settings.ajax_url + '?action=wcmol_get_oneliner')
 			.then(res => res.json())
 			.then(res => {
-				console.log("Yay, got a response:", res);
+				console.log("Got a response!", res, onelinerEl);
 
-				// get oneliner-element and replace content with oneliner in response
+				// Replace content in _this_ onelinerEl with response
 				onelinerEl.innerHTML = "<p>" + res.oneliner + "</p>";
-			})
-	} else {
-		console.log("No boom, no oneliner-element found 😢");
-	}
+			});
+	});
+
 })();
