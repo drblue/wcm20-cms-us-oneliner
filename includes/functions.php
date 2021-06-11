@@ -47,11 +47,19 @@ function wcmol_ajax_get_oneliner() {
 	$i = array_rand($oneliners); // get random index from array
 	$oneliner = $oneliners[$i];  // get item at index from array
 
-	// sleep(3);
-
-	wp_send_json([
+	wp_send_json_success([
 		'oneliner' => $oneliner,
 	]);
+
+	/**
+	 * {
+	 *     success: true,
+	 *     data: {
+	 *         oneliner: 'lorem ipsum'
+	 *     }
+	 * }
+	 */
+
 }
 add_action('wp_ajax_wcmol_get_oneliner', 'wcmol_ajax_get_oneliner');
 add_action('wp_ajax_nopriv_wcmol_get_oneliner', 'wcmol_ajax_get_oneliner');

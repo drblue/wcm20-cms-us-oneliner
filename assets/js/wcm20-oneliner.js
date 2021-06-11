@@ -11,7 +11,11 @@
 				console.log("Got a response!", res, onelinerEl);
 
 				// Replace content in _this_ onelinerEl with response
-				onelinerEl.innerHTML = "<p>" + res.oneliner + "</p>";
+				if (res.success) {
+					onelinerEl.innerHTML = "<p>" + res.data.oneliner + "</p>";
+				} else {
+					onelinerEl.innerHTML = "<p><em>Sorry, could not get oneliner.</em></p>";
+				}
 			});
 	});
 
